@@ -36,7 +36,7 @@ void loop(){
     andar();
     Serial.println("andar");
   }
-  }
+ 
   parar();
   distancia=0;
   delay(2000);
