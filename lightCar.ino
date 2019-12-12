@@ -35,19 +35,7 @@ void loop(){
   if(distancia > 20){
     andar();
     Serial.println("andar");
-  }else{
-    esquerda();
-    delay(350);
-    distanciaE = ultra();
-    delay(350);
-    direita();
-    delay(350);    
-    distanciaD = ultra();
-    delay(350);
-    if(distanciaE > distanciaD){
-      esquerda();
-      esquerda();
-      }
+  }
   }
   parar();
   distancia=0;
@@ -59,7 +47,6 @@ long ultra(){
   return(resp);
   }
 
-
 void andar(){
     //  Motor esquerdo, sentido horario - frente
     digitalWrite(IN1, HIGH);
@@ -69,17 +56,6 @@ void andar(){
     digitalWrite(IN4, LOW);
     delay(300);
     parar(); // redundancia
-}
-
-void direita(){
-  // Motor B no sentido horario
-  digitalWrite(IN3,HIGH);
-  digitalWrite(IN4, LOW);
- // Motor esquerdo no sentido anti horario
-  digitalWrite(IN1, LOW);
-  digitalWrite(IN2,HIGH);
-  delay(400);
-  parar();
 }
 
 void esquerda(){
